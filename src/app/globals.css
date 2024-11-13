@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -14,8 +16,53 @@
   }
 }
 
+/* Scroll suave para todo el documento */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  background: var(--background); /* Fondo neutral, sin imagen */
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: "Atkinson Hyperlegible", Arial, Helvetica, sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.background-static {
+  background: url("/images/plufow-le-studio-swytKpvWWyQ-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+@font-face {
+  font-family: "Playwrite GB S";
+  src: url("/fonts/PlaywriteGBS-Regular.ttf") format("truetype");
+  font-weight: 100 400;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-slide {
+  animation: fadeInSlideUp 0.5s ease forwards;
 }
