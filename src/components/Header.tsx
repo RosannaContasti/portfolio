@@ -48,7 +48,7 @@ const Header = () => {
       <h1
         className={`${lora.className} text-9xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-10xl white tracking-widest mb-10 sm:mb-14 md:mb-16 lg:mb-20 opacity-70 `}
       >
-        Rosanna Contasti
+        Rosanna Contasti 
       </h1>
 
       <h4
