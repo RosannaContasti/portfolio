@@ -25,7 +25,7 @@ const Projects = () => {
       description: t("firstProjectDescription"),
       link: "https://app.proyecto-sirenas.com",
       image: "../../images/Screenshot 2024-11-16 at 6.44.42 PM.png",
-      video: "../../videos/appSirenas.mov",
+      video: "", //"../../videos/appSirenas.mov",
       tools: [
         "React",
         "Next.js",
@@ -40,7 +40,7 @@ const Projects = () => {
       description: t("secondProjectDescription"),
       link: "https://sirenas.tv/login",
       image: "../../images/webApp.png",
-      video: "../../videos/adminVideo.mov",
+      video: "",//"../../videos/adminVideo.mov",
       tools: [
         "React",
         "Next.js",
@@ -70,7 +70,7 @@ const Projects = () => {
       description: t("thirdProjectDescription"),
       link: "https://admin.proyecto-sirenas.com/",
       image: "../../images/webApp.png",
-      video: "../../videos/adminVideo.mov",
+      video: "", //"../../videos/adminVideo.mov",
       tools: [
         "React",
         "Next.js ",
