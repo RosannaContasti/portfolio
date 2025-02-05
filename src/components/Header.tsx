@@ -46,13 +46,13 @@ const Header = () => {
   return (
     <div className="flex items-center justify-center min-h-screen text-center flex-col ">
       <h1
-        className={`${lora.className} text-9xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-10xl white tracking-widest mb-10 sm:mb-14 md:mb-16 lg:mb-20 opacity-50 font-sono`}
+        className={`${lora.className} text-9xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-10xl white tracking-widest mb-10 sm:mb-14 md:mb-16 lg:mb-20 opacity-70 `}
       >
         Rosanna Contasti
       </h1>
 
       <h4
-        className={`${montserrat.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-500 tracking-widest mb-10 sm:mb-14 md:mb-16 lg:mb-20 opacity-40 font-sono`}
+        className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-500 tracking-widest mb-10 sm:mb-14 md:mb-16 lg:mb-20 opacity-40 `}
       >
         {text}
         <span className="blinking-cursor">|</span>

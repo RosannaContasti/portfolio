@@ -2,6 +2,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import styles from "../styles/AboutMe.module.css"; // Importamos los estilos
+import { FaReact } from "react-icons/fa";
+import { TbBrandTypescript, TbBrandReactNative } from "react-icons/tb";
+import { DiJavascript1 } from "react-icons/di";
+import { RiNextjsLine, RiTailwindCssLine, RiCss3Line } from "react-icons/ri";
+import { SiMui } from "react-icons/si";
 
 const AboutMe = () => {
   const t = useTranslations("About");
@@ -9,14 +14,14 @@ const AboutMe = () => {
   const sectionRef = useRef(null);
 
   const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "React Native",
-    "Next.js",
-    "Tailwind",
-    "CSS",
-    "MUI",
+    { name: "JavaScript", icon: <DiJavascript1 /> },
+    { name: "TypeScript", icon: <TbBrandTypescript /> },
+    { name: "React", icon: <FaReact /> },
+    { name: "React Native", icon: <TbBrandReactNative /> },
+    { name: "Next.js", icon: <RiNextjsLine /> },
+    { name: "Tailwind", icon: <RiTailwindCssLine /> },
+    { name: "CSS", icon: <RiCss3Line /> },
+    { name: "MUI", icon: <SiMui /> },
   ];
 
   useEffect(() => {
@@ -81,15 +86,17 @@ const AboutMe = () => {
             hasBeenVisible ? styles["slide-in"] : styles.hidden
           } mt-20 flex flex-col items-center w-96`}
         >
-          <p className="text-xl text-gray-500 opacity-70 "> {t("skills")}</p>
-          <ul className="flex flex-wrap justify-center mt-4 space-x-4 ">
-            {skills.map((item) => {
-              return (
-                <li className="text-gray-500 opacity-70 px-4 py-2 ">
-                  {item}
-                </li>
-              );
-            })}
+          <p className="text-xl text-gray-500 opacity-70">{t("skills")}</p>
+          <ul className="flex flex-wrap justify-center mt-4 space-x-4">
+            {skills.map((item, index) => (
+              <li
+                key={index}
+                className="text-gray-500 opacity-70 px-4 py-2 flex items-center space-x-2"
+              >
+                {item.icon}
+                <span>{item.name}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

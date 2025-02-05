@@ -24,7 +24,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body>
-      <CustomCursor /> 
+      {/* <CustomCursor />  */}
         <NextIntlClientProvider messages={messages}>
        {children}
         </NextIntlClientProvider>
