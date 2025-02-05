@@ -73,7 +73,7 @@ const Projects = () => {
       video: "../../videos/adminVideo.mov",
       tools: [
         "React",
-        "Next.js",
+        "Next.js ",
         "Tailwind CSS",
         "Firebase",
         "MongoDB",
