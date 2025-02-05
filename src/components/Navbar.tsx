@@ -1,113 +1,91 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { useParams, usePathname, useRouter } from "next/navigation";
 import { Link } from "@/i18n/routing";
-
-import { useLocale } from "next-intl";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("Home");
 
-  const locale = useLocale();
-
   useEffect(() => {
-    setIsMounted(true);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="w-full">
-      <div className="container mx-auto px-6 py-4 flex justify-end items-center">
-        {/* Links para pantallas grandes */}
-        <div className="hidden md:flex space-x-14">
-          <a
-            href="#about"
-            className="text-gray-500 tracking-widest text-m font-sans transition-transform transform hover:-translate-y-1 opacity-70"
-          >
-            {t("about")}
-          </a>
-          <a
-            href="#projects"
-            className="text-gray-500 tracking-widest text-m font-sans transition-transform transform hover:-translate-y-1 opacity-70"
-          >
-            {t("projects")}
-          </a>
-          <a
-            href="#contact"
-            className="text-gray-500 tracking-widest text-m font-sans transition-transform transform hover:-translate-y-1 opacity-70"
-          >
-            {t("contact")}
-          </a>
-          {/* Links para cambiar de idioma */}
-          <div className="hidden md:flex space-x-14">
-            <Link
-              className="text-gray-500 tracking-widest text-m font-sans transition-transform transform hover:-translate-y-1 opacity-70"
-              href="/"
-              locale="en"
-            >
-              English
-            </Link>
-            <Link
-              className="text-gray-500 tracking-widest text-m font-sans transition-transform transform hover:-translate-y-1 opacity-70"
-              href="/"
-              locale="es"
-            >
-              Espanol
-            </Link>
-          </div>
-        </div>
-
-        {/* Menú hamburguesa para móviles */}
-        <div className="md:hidden">
+    <>
+      {/* Ícono hamburguesa: Fuera cuando está cerrado */}
+      {!isOpen && (
+        <div className="fixed top-4 right-6 z-[100]">
           <button
             onClick={toggleMenu}
-            className="text-gray-800 focus:outline-none opacity-70"
+            className="text-gray-500 text-3xl focus:outline-none opacity-70"
           >
-            <svg
-              className="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 2l2.9 5.9L21 9.2l-4.5 4.3L17.8 21 12 17.7 6.2 21l1.3-7.5L3 9.2l6.1-.9L12 2z" />
-            </svg>
+            ☰
           </button>
         </div>
-      </div>
-
-      {/* Menú desplegable para móviles */}
-      {isOpen && (
-        <div className="md:hidden absolute top-16 right-0 w-auto flex flex-col space-y-4 px-6 py-4">
-          <a
-            href="#about"
-            className="text-gray-500 tracking-widest text-xl font-sans fade-in-slide delay-[0ms] opacity-70"
-            onClick={() => setIsOpen(false)}
-          >
-            Sobre mí
-          </a>
-          <a
-            href="#projects"
-            className="text-gray-500 tracking-widest text-xl font-sans fade-in-slide delay-[300ms] opacity-70"
-            onClick={() => setIsOpen(false)}
-          >
-            Proyectos
-          </a>
-          <a
-            href="#contact"
-            className="text-gray-500 tracking-widest text-xl font-sans fade-in-slide delay-[600ms] opacity-70"
-            onClick={() => setIsOpen(false)}
-          >
-            Contacto
-          </a>
-        </div>
       )}
-    </nav>
+
+      {/* Menú hamburguesa con botón adentro cuando está abierto */}
+      <div
+        className={`fixed top-16 right-0 w-44 flex flex-col items-end px-6 py-4 bg-white shadow-md rounded-sm transition-all duration-300 mr-11 z-[100] ${
+          isOpen
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 -translate-y-4 scale-95 pointer-events-none"
+        }`}
+      >
+        {/* Botón de cerrar dentro del menú */}
+        <button
+          onClick={toggleMenu}
+          className="text-gray-500 text-3xl focus:outline-none self-end opacity-70 mb-2"
+        >
+          ✕
+        </button>
+
+        {/* Opciones del menú */}
+        {[
+          { id: "about", label: t("about") },
+          { id: "projects", label: t("projects") },
+          { id: "contact", label: t("contact") },
+        ].map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            className="text-gray-500 text-m font-sans transition-transform transform hover:-translate-y-1 opacity-70"
+            onClick={() => setIsOpen(false)}
+          >
+            {item.label}
+          </a>
+        ))}
+
+        {/* Links de idioma */}
+        <Link
+          href="/"
+          locale="en"
+          className="text-gray-500 text-m font-sans transition-transform transform hover:-translate-y-1 opacity-70"
+        >
+          English
+        </Link>
+        <Link
+          href="/"
+          locale="es"
+          className="text-gray-500 text-m font-sans transition-transform transform hover:-translate-y-1 opacity-70"
+        >
+          Español
+        </Link>
+      </div>
+    </>
   );
 };
 

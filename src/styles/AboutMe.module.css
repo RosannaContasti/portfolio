@@ -1,0 +1,24 @@
+/* Definimos la animación para que el elemento aparezca desde la derecha */
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Clase que se aplica cuando el elemento está en el viewport */
+  .slide-in {
+    animation: slideInFromRight 1s ease-out;
+    opacity: 1; /* Asegurarse de que el elemento sea visible después de la animación */
+  }
+  
+  /* Clase que mantiene oculto el elemento antes de ser visible */
+  .hidden {
+    opacity: 0; /* Mantiene el elemento invisible hasta que entre en el viewport */
+    transform: translateX(100%); /* Comienza fuera de la pantalla */
+  }
+  

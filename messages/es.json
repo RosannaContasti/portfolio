@@ -5,16 +5,35 @@
     "contact":"Contacto"
     }, 
     "Header":{
-      "secondTitle":"Desarrolladora Frontend"
+      "secondTitle":"Desarrolladora Frontend."
     }, 
     "About" :
     {
-      "title":"Sobre mí", 
-      "description":" Hola, soy Rosanna Contasti, programadora frontend con experiencia en React y React Native. Me encanta dar vida a proyectos usando herramientas como MUI, Tailwind, Bootstrap y Styled Components, siempre con un enfoque en diseño responsive para asegurarme de que todo se vea genial sin importar el dispositivo. Creo que el frontend es más que solo código: es una mezcla de creatividad y funcionalidad, donde cada componente y cada estilo contribuyen a una experiencia que realmente conecta con las personas. ¡Me encanta ese desafío!"
+      "title":"Sobre", 
+      "title2":"mí",
+      "description":" Hola, soy Rosanna Contasti, programadora frontend con experiencia en React y React Native. Me encanta dar vida a proyectos usando herramientas como MUI, Tailwind, Bootstrap y Styled Components, siempre con un enfoque en diseño responsive para asegurarme de que todo se vea genial sin importar el dispositivo. Creo que el frontend es más que solo código: es una mezcla de creatividad y funcionalidad, donde cada componente y cada estilo contribuyen a una experiencia que realmente conecta con las personas. ¡Me encanta ese desafío!", 
+      "skills":"Tecnologías"
+
     }, 
     "Projects" : {   
       "title":"Proyectos",
       "firstProjectTitle":"Proyecto Sirenas App", 
-"firstProjectDescription":"Una aplicación desarrollada con React Native y Styled Components para Proyecto Sirenas, una iniciativa argentina fundada por Agostina Bisio. El objetivo de la aplicación es acompañar a mujeres en la adopción de hábitos de vida más saludables y mejorar su calidad de vida.La aplicación incluye funcionalidades como video en vivo, galería de audio y video, chat con dupla y comunidad, y búsqueda de match para apoyo mutuo en el proceso de pérdida de peso. También cuenta con calendario y agenda, registro de comidas, hidratación, sueño, ánimo y ejercicio, además de herramientas para subir fotos y ver estadísticas personales. En la sección de pagos, se ofrece soporte para transferencia bancaria, MercadoPago y PayPal."
-     } 
+"firstProjectDescription":"Una aplicación desarrollada con React Native y Styled Components para Proyecto Sirenas, una iniciativa argentina fundada por Agostina Bisio. El objetivo de la aplicación es acompañar a mujeres en la adopción de hábitos de vida más saludables y mejorar su calidad de vida.La aplicación incluye funcionalidades como video en vivo, galería de audio y video, chat con dupla y comunidad, y búsqueda de match para apoyo mutuo en el proceso de pérdida de peso. También cuenta con calendario y agenda, registro de comidas, hidratación, sueño, ánimo y ejercicio, además de herramientas para subir fotos y ver estadísticas personales. En la sección de pagos, se ofrece soporte para transferencia bancaria, MercadoPago y PayPal.",
+"secondProjectTitle":"Proyecto Sirenas Web App",
+"secondProjectDescription": "Versión web de la app Sirenas, diseñada para desktop y tablet. Incluye funcionalidades clave como livestreaming en vivo e interacción en foros, optimizada para una experiencia fluida y visualmente atractiva en pantallas grandes. Perfecta para conectar con la comunidad Sirenas desde desktop y tablet.",
+"thirdProjectTitle":"Administrador Proyecto Sirenas", 
+"thirdProjectDescription": "En proceso"
+     },
+     "Contact":{
+      "title":"Contacto", 
+      "subtitle":"Hola!",
+      "description":"¿Quieres saludarme, pedir mi currículum o ver si podemos crear algo increíble juntos? ¡Me encantaría saber de ti! Rellena tus datos en el formulario a continuación y ¡espero tu mensaje!", 
+      "inputName":"Nombre", 
+      "inputEmail":"Email", 
+      "inputMessage":"Mensaje", 
+      "sendButton":"Enviar Email",
+      "designeBy":"Diseñado & codeado con 💙 by Rosanna Contasti"
+     }
+
+
   }

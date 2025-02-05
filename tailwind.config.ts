@@ -10,13 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins"],
+        nanito: ["Nunito", "sans-serif"],
+        sono: ["Sono", "sans-serif"],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        customPink: "#CE9ECB", 
-        customBlue:"#7DC8CC"
+        customPink: "#EAD7E0",
+        customBlue: "#BDE4E6",
+        customOrange: "#F8D8C3",
       },
     },
   },
